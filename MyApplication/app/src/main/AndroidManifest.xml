@@ -3,9 +3,9 @@
     package="com.du.a36kr">
 
     <application
-        android:name=".model.app.My36KrApp"
+        android:name=".ui.app.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
