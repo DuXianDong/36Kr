@@ -42,5 +42,9 @@ public abstract class AbsBaseFragment extends Fragment {
     protected abstract void initViews();
     //使用数据
     protected abstract void initData();
+    //简化findViewById
+    protected <T extends View> T byView (int resId){
+        return (T) getView().findViewById(resId);
+    }
 
 }

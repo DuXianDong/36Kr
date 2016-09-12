@@ -1,9 +1,14 @@
 package com.du.a36kr.ui.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.widget.LinearLayout;
 
 import com.du.a36kr.R;
 import com.du.a36kr.ui.adapter.MainAdapter;
@@ -21,6 +26,9 @@ public class MainActivity extends AbsBaseActivity {
     private TabLayout tabLayout;
     private List<Fragment> fragments;
     private MainAdapter adapter;
+    //抽屉
+    private DrawerLayout drawerLayout;
+    private LinearLayout layout;
 
 
 
@@ -33,11 +41,14 @@ public class MainActivity extends AbsBaseActivity {
     protected void initViews() {
         viewPager = byView(R.id.main_pager);
         tabLayout = byView(R.id.main_tab);
+        drawerLayout = byView(R.id.Main_drawer_layout);
+        layout = byView(R.id.linear_layout_drawer);
 
     }
 
     @Override
     protected void initData() {
+
         fragments = new ArrayList<>();
         fragments.add(new NewsFragment());
         fragments.add(new EquityFragment());
@@ -45,17 +56,15 @@ public class MainActivity extends AbsBaseActivity {
         fragments.add(new MessageFragment());
         fragments.add(new MineFragment());
         //创建适配器绑定适配器
-        adapter = new MainAdapter(getSupportFragmentManager(),fragments);
+        adapter = new MainAdapter(getSupportFragmentManager(), fragments);
         viewPager.setAdapter(adapter);
         //设在字体颜色
-        tabLayout.setTabTextColors(Color.BLACK,Color.BLUE);
-        //设置下标
-        tabLayout.setSelectedTabIndicatorColor(Color.BLACK);
+        tabLayout.setTabTextColors(Color.BLACK, Color.BLUE);
+//        //设置下标
+//        tabLayout.setSelectedTabIndicatorColor(Color.BLACK);
 
         //tablayout和Viewpager联动
         tabLayout.setupWithViewPager(viewPager);
-
-
 
         tabLayout.getTabAt(0).setIcon(R.drawable.news);
         tabLayout.getTabAt(1).setIcon(R.drawable.equity);
@@ -64,4 +73,21 @@ public class MainActivity extends AbsBaseActivity {
         tabLayout.getTabAt(4).setIcon(R.drawable.mine);
 
     }
+
+
+
+
+    class MyBroadCast extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+        //打开抽屉
+        drawerLayout.openDrawer(layout);
+
+        }
+    }
+
+
+
+
 }
