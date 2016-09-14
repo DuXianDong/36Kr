@@ -26,8 +26,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/twenty"
                     android:layout_weight="1"
-                    android:layout_margin="20dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -45,8 +45,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/twenty"
                     android:layout_weight="1"
-                    android:layout_margin="20dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -64,9 +64,9 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:gravity="center"
+                    android:layout_margin="@dimen/twenty"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
@@ -81,228 +81,267 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="@color/grey"/>
+                android:layout_height="@dimen/ten"
+                android:background="@color/grey" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/discovery_days_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:src="@mipmap/discovery_icon_days"/>
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"
-                        android:layout_toRightOf="@id/discovery_days_img"
-                        android:background="@color/black"/>
+                    android:layout_margin="@dimen/ten"
+                    android:src="@mipmap/discovery_icon_days" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="@dimen/twenty"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:layout_toRightOf="@id/discovery_days_img"
+                    android:background="@color/black" />
 
                 <LinearLayout
-                    android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/ten"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="8,180,000元"/>
+                            android:text="8,180,000元" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="投资金额"/>
+                            android:layout_marginLeft="@dimen/ten"
+                            android:text="投资金额" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="@dimen/ten"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="102人"/>
+                            android:text="102人" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="认购人数"/>
+                            android:layout_marginLeft="@dimen/ten"
+                            android:text="认购人数" />
                     </LinearLayout>
 
                 </LinearLayout>
             </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/discovery_shape"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/ic_launcher" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginTop="10dp"
-                    android:text="1天前收到来着北京市用户的订单"/>
+                    android:layout_marginRight="@dimen/thirty"
+                    android:layout_marginTop="@dimen/ten"
+                    android:text="1天前收到来着北京市用户的订单" />
 
             </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:textSize="20dp"
-                    android:text="热门项目"/>
+                    android:layout_margin="@dimen/ten"
+                    android:text="热门项目"
+                    android:textSize="@dimen/twenty" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:layout_alignParentRight="true"
-                    android:text="查看全部"/>
+                    android:layout_margin="@dimen/ten"
+                    android:text="查看全部" />
             </RelativeLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_margin="10dp"
-                android:background="@color/black"/>
+                android:layout_margin="@dimen/ten"
+                android:background="@color/black" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/twenty"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/ic_launcher" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:text="修手机100"/>
+                        android:text="修手机100"
+                        android:textSize="@dimen/twentySp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="手机服务专家"/>
+                        android:layout_marginTop="@dimen/ten"
+                        android:text="手机服务专家" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/orange"
-                        android:layout_marginTop="10dp"
-                        android:text="创始人练习成功创业者"/>
+                        android:layout_marginTop="@dimen/ten"
+                        android:text="创始人练习成功创业者"
+                        android:textColor="@color/orange" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/twenty"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/ic_launcher" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:text="奇迹厦门演唱会"/>
+                        android:text="奇迹厦门演唱会"
+                        android:textSize="@dimen/twentySp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="群星演唱会"/>
+                        android:layout_marginTop="@dimen/ten"
+                        android:text="群星演唱会" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/orange"
-                        android:layout_marginTop="10dp"
-                        android:text="创始人:金牌演唱会制片人"/>
+                        android:layout_marginTop="@dimen/ten"
+                        android:text="创始人:金牌演唱会制片人"
+                        android:textColor="@color/orange" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/twenty"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/ic_launcher" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:text="华佗驾到 (潼诚一得)"/>
+                        android:text="华佗驾到 (潼诚一得)"
+                        android:textSize="@dimen/twentySp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="健康行业领先的SaaS服务平台"/>
+                        android:layout_marginTop="@dimen/ten"
+                        android:text="健康行业领先的SaaS服务平台" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/orange"
-                        android:layout_marginTop="10dp"
-                        android:text="创始人:管理经验和资源优势强"/>
+                        android:layout_marginTop="@dimen/ten"
+                        android:text="创始人:管理经验和资源优势强"
+                        android:textColor="@color/orange" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:textSize="20dp"
-                    android:text="投资速递"/>
+                    android:layout_margin="@dimen/ten"
+                    android:text="投资速递"
+                    android:textSize="@dimen/twenty" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:layout_alignParentRight="true"
-                    android:text="快速了解股权投资"/>
+                    android:layout_margin="@dimen/ten"
+                    android:text="快速了解股权投资" />
             </RelativeLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_margin="10dp"
-                android:background="@color/black"/>
+                android:layout_margin="@dimen/ten"
+                android:background="@color/black" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -311,33 +350,35 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/twenty"
                     android:layout_weight="1"
+                    android:background="@drawable/discovery_shape"
                     android:gravity="center"
                     android:padding="3dp"
-                    android:background="@drawable/discovery_shape"
-                    android:text="行业新闻"/>
+                    android:text="行业新闻"
+                    android:textColor="@color/colorPrimary" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/twenty"
                     android:layout_weight="1"
+                    android:background="@drawable/discovery_shape"
                     android:gravity="center"
                     android:padding="3dp"
-                    android:background="@drawable/discovery_shape"
-                    android:text="项目动态"/>
+                    android:text="项目动态"
+                    android:textColor="@color/colorPrimary" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/twenty"
                     android:layout_weight="1"
+                    android:background="@drawable/discovery_shape"
                     android:gravity="center"
                     android:padding="3dp"
-                    android:background="@drawable/discovery_shape"
-                    android:text="投资活动"/>
+                    android:text="投资活动"
+                    android:textColor="@color/colorPrimary" />
             </LinearLayout>
 
             <LinearLayout
@@ -345,86 +386,99 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:orientation="horizontal">
-               <LinearLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:layout_margin="30dp"
-                   android:background="@mipmap/discovery_ph_item"
-                   android:orientation="vertical">
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:textColor="@color/colorPrimary"
-                       android:textSize="20sp"
-                       android:text="发现好项目"/>
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_margin="10dp"
-                       android:text="投资人每天都在看"/>
-               </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/thirty"
                     android:layout_weight="1"
-                    android:layout_margin="30dp"
+                    android:background="@mipmap/discovery_ph_item"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="发现好项目"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/twentySp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/ten"
+                        android:text="投资人每天都在看" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/thirty"
+                    android:layout_weight="1"
                     android:background="@mipmap/discovery_ph_investor"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="寻找投资人"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
-                        android:text="寻找投资人"/>
+                        android:textSize="@dimen/twentySp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="顶级机构在全面入驻"/>
+                        android:layout_margin="@dimen/ten"
+                        android:text="顶级机构在全面入驻" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/tabbar_icon_mine_highlight"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="@dimen/ten"
+                    android:src="@mipmap/tabbar_icon_mine_highlight" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="我是创业者"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="@dimen/ten"
+                    android:text="我是创业者" />
 
 
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black"/>
+                android:background="@color/black" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/discovery_icon_new_investor"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="@dimen/ten"
+                    android:src="@mipmap/discovery_icon_new_investor" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="我是专业投资人"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="@dimen/ten"
+                    android:text="我是专业投资人" />
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/black"/>
+                android:background="@color/black" />
 
 
         </LinearLayout>

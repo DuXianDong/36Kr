@@ -7,10 +7,6 @@ import android.support.v4.view.ViewPager;
 
 import com.du.a36kr.R;
 import com.du.a36kr.ui.adapter.EquityPagerAdapter;
-import com.du.a36kr.ui.fragment.equitychildfragment.AchievementFragment;
-import com.du.a36kr.ui.fragment.equitychildfragment.AllFragment;
-import com.du.a36kr.ui.fragment.equitychildfragment.ProceedFragment;
-import com.du.a36kr.ui.fragment.equitychildfragment.SuccessFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +34,10 @@ public class EquityFragment extends AbsBaseFragment {
     @Override
     protected void initData() {
         data = new ArrayList<>();
-        data.add(new AllFragment());
-        data.add(new AchievementFragment());
-        data.add(new ProceedFragment());
-        data.add(new SuccessFragment());
+        data.add(EquityChildFragment.newInstance("全部"));
+        data.add(EquityChildFragment.newInstance("募资中"));
+        data.add(EquityChildFragment.newInstance("募资完成"));
+        data.add(EquityChildFragment.newInstance("融资成功"));
         adapter = new EquityPagerAdapter(getChildFragmentManager(),data);
         //字体颜色
         tabLayout.setTabTextColors(Color.BLACK,Color.BLUE);

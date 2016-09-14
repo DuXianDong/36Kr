@@ -1,15 +1,22 @@
 package com.du.a36kr.ui.fragment;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.du.a36kr.R;
 import com.du.a36kr.model.bean.NewsBean;
 import com.du.a36kr.ui.adapter.NewsAdapter;
 import com.du.a36kr.ui.app.MyApp;
+import com.du.a36kr.utils.NetUtils;
+import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,8 +25,11 @@ import java.util.List;
 public class NewsFragment extends AbsBaseFragment {
     private ImageView titleMenuImg;
     private NewsAdapter adapter;
-    private List<NewsBean> data;
+    private List<NewsBean.DataBean.DatasBean> data;
     private ListView listview;
+    //定义请求队列
+    private RequestQueue queue;
+
 
     @Override
     protected int setLayout() {
@@ -35,14 +45,30 @@ public class NewsFragment extends AbsBaseFragment {
 
     @Override
     protected void initData() {
-
         adapter = new NewsAdapter(MyApp.getContext());
-        data = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            data.add(new NewsBean("标题","作者","时间","深度",R.mipmap.ic_launcher));
+        //初始化请求队列
+        queue = Volley.newRequestQueue(MyApp.getContext());
+        //请求数据
+        StringRequest request = new StringRequest(NetUtils.NEWS_ALL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("NewsFragment", response);
+                Gson gson = new Gson();
+                NewsBean bean = gson.fromJson(response,NewsBean.class);
+                data =  bean.getData().getData();
+                adapter.setData(data);
 
-        }
-        adapter.setData(data);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        queue.add(request);
+
+
+
         listview.setAdapter(adapter);
 
 

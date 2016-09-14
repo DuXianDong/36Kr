@@ -10,7 +10,11 @@ import android.widget.TextView;
 
 import com.du.a36kr.R;
 import com.du.a36kr.model.bean.NewsBean;
+import com.du.a36kr.utils.ScreenSizeUtils;
+import com.squareup.picasso.Picasso;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -18,14 +22,14 @@ import java.util.List;
  * 新闻界面的ListView的Adapter类
  */
 public class NewsAdapter extends BaseAdapter {
-    private List<NewsBean> data;
+    private List<NewsBean.DataBean.DatasBean> data;
     private Context context;
 
     public NewsAdapter(Context context) {
         this.context = context;
     }
 
-    public void setData(List<NewsBean> data) {
+    public void setData(List<NewsBean.DataBean.DatasBean> data) {
         this.data = data;
         notifyDataSetChanged();
     }
@@ -48,23 +52,43 @@ public class NewsAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         NewsViewHolder holder = null;
-        if (convertView == null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.news_item,parent,false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_news, parent, false);
+            //屏幕适配
+            int height = ScreenSizeUtils.getScreenSize(context, ScreenSizeUtils.ScreenState.HEIGHT);
+            //通过布局设置参数修改高度
+            ViewGroup.LayoutParams params = convertView.getLayoutParams();
+            params.height = height / 7;
+            convertView.setLayoutParams(params);
+
             holder = new NewsViewHolder(convertView);
             convertView.setTag(holder);
-        }else {
+        } else {
             holder = (NewsViewHolder) convertView.getTag();
         }
-        NewsBean bean = data.get(position);
-        holder.imageView.setImageResource(bean.getImg());
-        holder.titleTv.setText(bean.getTitleTv());
-        holder.authorTv.setText(bean.getAuthorTv());
-        holder.timeTv.setText(bean.getTimeTv());
-        holder.positionTv.setText(bean.getPositionTv());
+        if (holder != null) {
+            NewsBean.DataBean.DatasBean bean = data.get(position);
+            holder.titleTv.setText(bean.getTitle());
+            holder.positionTv.setText(bean.getColumnName());
+            holder.authorTv.setText(bean.getUser().getName());
+            //在实体类中获取时间
+            Long time = bean.getPublishTime();
+            //格式化时间
+            SimpleDateFormat formats = new SimpleDateFormat(" HH:mm");
+            Date dates = new Date(time);
+            String formatTime = formats.format(dates);
+
+
+
+            holder.timeTv.setText(formatTime);
+            Picasso.with(context).load(bean.getFeatureImg()).into(holder.imageView);
+
+        }
         return convertView;
     }
-    class NewsViewHolder{
-        private TextView titleTv,authorTv,timeTv,positionTv;
+
+    class NewsViewHolder {
+        private TextView titleTv, authorTv, timeTv, positionTv;
         private ImageView imageView;
 
         public NewsViewHolder(View view) {

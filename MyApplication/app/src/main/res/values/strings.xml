@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">36Kr</string>
+    <!--抽屉-->
+    <string name="drawer_all">全部</string>
+    <string name="drawer_early">早期项目</string>
+    <string name="drawer_rotate">B轮后</string>
+    <string name="drawer_corporation">大公司</string>
+    <string name="drawer_capital">资本</string>
+    <string name="drawer_depth">深度</string>
+    <string name="drawer_research">研究</string>
 </resources>

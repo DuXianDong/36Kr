@@ -8,47 +8,154 @@
 
     <LinearLayout
         android:id="@+id/linear_layout_drawer"
-        android:layout_width="200dp"
+        android:layout_width="@dimen/two_hundred"
         android:layout_height="match_parent"
         android:layout_gravity="left"
-        android:background="#c9c8c8"
+        android:background="@color/white"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="全部"/>
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="早期项目"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="@dimen/ten"
+            android:layout_marginTop="@dimen/thirty"
+            android:src="@mipmap/common_nav_icon_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="B轮后"/>
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/ten"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="@dimen/twenty"
+                android:layout_margin="@dimen/twenty"
+                android:background="@color/colorPrimary" />
+
+
+            <TextView
+                android:id="@+id/drawer_all_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty"
+                android:text="@string/drawer_all" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="大公司"/>
-        <TextView
-            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="@dimen/twenty"
+                android:layout_margin="@dimen/twenty"
+                android:background="@color/green" />
+
+            <TextView
+                android:id="@+id/drawer_early_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty"
+                android:text="@string/drawer_early" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="资本"/>
-        <TextView
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="@dimen/twenty"
+                android:layout_margin="@dimen/twenty"
+                android:background="@color/light_blue" />
+
+            <TextView
+                android:id="@+id/drawer_rotate_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty"
+                android:text="@string/drawer_rotate" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="深度"/>
-        <TextView
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="@dimen/twenty"
+                android:layout_margin="@dimen/twenty"
+                android:background="@color/skyblue" />
+
+            <TextView
+                android:id="@+id/drawer_corporation_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty"
+                android:text="@string/drawer_corporation" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="研究"/>
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="@dimen/twenty"
+                android:layout_margin="@dimen/twenty"
+                android:background="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/drawer_capital_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty"
+                android:text="@string/drawer_capital" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="@dimen/twenty"
+                android:layout_margin="@dimen/twenty"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/drawer_depth_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty"
+                android:text="@string/drawer_depth" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="@dimen/twenty"
+                android:layout_margin="@dimen/twenty"
+                android:background="@color/orange" />
+
+            <TextView
+                android:id="@+id/drawer_research_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty"
+                android:text="@string/drawer_research" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout

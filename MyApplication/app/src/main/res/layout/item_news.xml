@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/ten"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/news_item_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginBottom="@dimen/ten"
+        android:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/news_item_img"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/news_item_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/ten"
+            android:layout_marginTop="@dimen/ten"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/fifteenSp"
+            android:text="标题"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ten"
+            android:layout_marginRight="@dimen/ten"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/news_item_author_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tenSp"
+                android:text="作者"/>
+
+            <TextView
+                android:id="@+id/news_item_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_toRightOf="@id/news_item_author_tv"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tenSp"
+                android:text="事件"/>
+
+            <TextView
+                android:id="@+id/new_item_position_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/ten"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tenSp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
