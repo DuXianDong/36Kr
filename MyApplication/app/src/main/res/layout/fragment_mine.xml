@@ -15,7 +15,7 @@
             android:layout_gravity="right"
             android:layout_marginTop="@dimen/thirty"
             android:layout_marginRight="@dimen/ten"
-            android:src="@mipmap/mine_icon_setting_blue"/>
+            android:src="@mipmap/mine_icon_setting"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -55,6 +55,7 @@
 
 
             <LinearLayout
+                android:id="@+id/mine_order"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -79,6 +80,7 @@
                 android:background="@color/grey" />
 
             <LinearLayout
+                android:id="@+id/mine_account_state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">

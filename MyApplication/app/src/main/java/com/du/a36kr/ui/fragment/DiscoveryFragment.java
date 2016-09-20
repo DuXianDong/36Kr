@@ -4,6 +4,7 @@ import com.du.a36kr.R;
 
 /**
  * Created by dllo on 16/9/8.
+ * 发现界面的Fragment
  */
 public class DiscoveryFragment extends AbsBaseFragment {
     @Override

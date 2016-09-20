@@ -6,6 +6,7 @@ import com.du.a36kr.ui.app.MyApp;
 
 /**
  * Created by dllo on 16/9/8.
+ * 吐司的实体类
  */
 public final class ToastUtils {
     private ToastUtils() {

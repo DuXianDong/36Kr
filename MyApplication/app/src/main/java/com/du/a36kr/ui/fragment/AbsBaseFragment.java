@@ -12,7 +12,7 @@ import android.view.ViewGroup;
  * Created by dllo on 16/9/8.
  */
 public abstract class AbsBaseFragment extends Fragment {
-    private Context context;
+    protected Context context;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -36,13 +36,25 @@ public abstract class AbsBaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initData();
     }
-    //设置布局
+
+    /**
+     * 设置布局
+     */
     protected abstract int setLayout();
-    //初始化组件
+
+    /**
+     * 初始化组件
+     */
     protected abstract void initViews();
-    //使用数据
+
+    /**
+     * 使用数据
+     */
     protected abstract void initData();
-    //简化findViewById
+
+    /**
+     * 简化findViewById
+     */
     protected <T extends View> T byView (int resId){
         return (T) getView().findViewById(resId);
     }

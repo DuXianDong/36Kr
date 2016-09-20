@@ -3,162 +3,199 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/equity_item_small_img"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_margin="10dp">
 
-    <LinearLayout
-        android:layout_toRightOf="@id/equity_item_small_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/equity_item_title_tv"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/equity_item_small_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textSize="20sp"
-            android:text="修机100"/>
-        <TextView
-            android:id="@+id/equity_item_content_tv"
+            android:layout_toRightOf="@id/equity_item_small_img"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/equity_item_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten"
+                android:text="修机100"
+                android:textColor="@color/black"
+                android:textSize="@dimen/twentySp" />
+
+            <TextView
+                android:id="@+id/equity_item_content_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ten"
+                android:layout_marginLeft="@dimen/ten"
+                android:singleLine="true"
+                android:text="手机服务专家"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/equity_item_concern_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="手机服务专家"/>
-
-    </LinearLayout>
-    <Button
-        android:id="@+id/equity_item_concern_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:text="关注"/>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:src="@mipmap/equity_tips_icon_first" />
     </RelativeLayout>
+
     <ImageView
-        android:id="@+id/equity_item_big_iv"
+        android:id="@+id/equity_item_big_img"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/ic_launcher" />
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
             android:orientation="vertical">
+
             <TextView
-                android:id="@+id/equity_item_investors_tv"
+                android:id="@+id/equity_item_lead_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="投资方"/>
+                android:layout_margin="@dimen/ten"
+                android:text="领投 方"
+                android:textColor="@color/black" />
+
             <TextView
                 android:id="@+id/equity_item_founder_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="创始人"/>
+                android:layout_margin="@dimen/ten"
+                android:text="创始人"
+                android:textColor="@color/black" />
+
             <TextView
-                android:id="@+id/equity_item_hatch_tv"
+                android:id="@+id/equity_item_data_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="孵化器"/>
+                android:layout_margin="@dimen/ten"
+                android:text="孵化器"
+                android:textColor="@color/black" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:gravity="right"
             android:orientation="vertical">
+
             <TextView
-                android:id="@+id/equity_item_capital_tv"
+                android:id="@+id/equity_item_company_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="众城资本"/>
+                android:layout_margin="@dimen/ten"
+                android:text="众城资本"
+                android:textColor="@color/black" />
+
             <TextView
-                android:id="@+id/equity_item_entrepreneurs_tv"
+                android:id="@+id/equity_item_next_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="练习成功创业者者"/>
+                android:layout_margin="@dimen/ten"
+                android:text="练习成功创业者者"
+                android:textColor="@color/black" />
+
             <TextView
-                android:id="@+id/equity_item_shenzheng_hatch"
+                android:id="@+id/equity_item_next_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="3W深圳孵化器"/>
+                android:layout_margin="@dimen/ten"
+                android:text="3W深圳孵化器"
+                android:textColor="@color/black" />
         </LinearLayout>
 
     </RelativeLayout>
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_margin="10dp"
-            android:background="@color/black"
-            />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/ten"
+        android:background="@color/black" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/ten"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
+            android:layout_weight="1"
             android:orientation="vertical">
 
 
+            <RelativeLayout
+                android:id="@+id/equity_item_Rvlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:id="@+id/equity_item_Rvlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/equity_item_invest_conduct_tv"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/equity_item_status_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="投资中"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/equity_item_fundraising_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="已募资"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/equity_item_fundraising_tv"
+                    android:text="已募资" />
+
+
+            </RelativeLayout>
+
+            <SeekBar
+                android:id="@+id/equity_item_seekbar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="投资中"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="已募资"/>
-
-
-
-        </RelativeLayout>
-        <SeekBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
+                android:thumb="@null" />
         </LinearLayout>
+
         <Button
+            android:id="@+id/equity_item_purchase_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:textSize="20sp"
             android:background="@color/orange"
-            android:text="认购"/>
+            android:text="认购"
+            android:textSize="@dimen/twentySp" />
     </LinearLayout>
-
 
 
 </LinearLayout>

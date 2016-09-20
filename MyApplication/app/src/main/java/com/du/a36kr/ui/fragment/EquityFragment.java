@@ -7,12 +7,15 @@ import android.support.v4.view.ViewPager;
 
 import com.du.a36kr.R;
 import com.du.a36kr.ui.adapter.EquityPagerAdapter;
+import com.du.a36kr.ui.fragment.child_fragment.EquityChildFragment;
+import com.du.a36kr.utils.NetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by dllo on 16/9/8.
+ * 股权投资Fragment类
  */
 public class EquityFragment extends AbsBaseFragment {
     private TabLayout tabLayout;
@@ -34,10 +37,11 @@ public class EquityFragment extends AbsBaseFragment {
     @Override
     protected void initData() {
         data = new ArrayList<>();
-        data.add(EquityChildFragment.newInstance("全部"));
-        data.add(EquityChildFragment.newInstance("募资中"));
-        data.add(EquityChildFragment.newInstance("募资完成"));
-        data.add(EquityChildFragment.newInstance("融资成功"));
+        //单利复用Fragment
+        data.add(EquityChildFragment.newInstance(NetUtils.EQUITY_ALL));
+        data.add(EquityChildFragment.newInstance(NetUtils.EQUITY_PROCEED));
+        data.add(EquityChildFragment.newInstance(NetUtils.EQUITY_ACHIEVEMENT));
+        data.add(EquityChildFragment.newInstance(NetUtils.EQUITY_SUCCESS));
         adapter = new EquityPagerAdapter(getChildFragmentManager(),data);
         //字体颜色
         tabLayout.setTabTextColors(Color.BLACK,Color.BLUE);

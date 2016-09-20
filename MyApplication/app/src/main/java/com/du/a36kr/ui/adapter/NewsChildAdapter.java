@@ -1,6 +1,7 @@
 package com.du.a36kr.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,11 +22,11 @@ import java.util.List;
  * Created by dllo on 16/9/10.
  * 新闻界面的ListView的Adapter类
  */
-public class NewsAdapter extends BaseAdapter {
+public class NewsChildAdapter extends BaseAdapter {
     private List<NewsBean.DataBean.DatasBean> data;
     private Context context;
 
-    public NewsAdapter(Context context) {
+    public NewsChildAdapter(Context context) {
         this.context = context;
     }
 
@@ -79,9 +80,23 @@ public class NewsAdapter extends BaseAdapter {
             String formatTime = formats.format(dates);
 
 
-
             holder.timeTv.setText(formatTime);
             Picasso.with(context).load(bean.getFeatureImg()).into(holder.imageView);
+            //设置TextView的颜色
+            if (bean.getColumnName().equals("早期项目")) {
+                holder.positionTv.setTextColor(Color.parseColor("#6ba450"));
+            } else if (bean.getColumnName().equals("B轮后")) {
+                holder.positionTv.setTextColor(Color.parseColor("#9ed9ef"));
+            } else if (bean.getColumnName().equals("明星公司")) {
+                holder.positionTv.setTextColor(Color.parseColor("#5895d7"));
+            } else if (bean.getColumnName().equals("资本")) {
+                holder.positionTv.setTextColor(Color.parseColor("#38459e"));
+            } else if (bean.getColumnName().equals("深度报道")) {
+                holder.positionTv.setTextColor(Color.parseColor("#dc487f"));
+            } else if (bean.getColumnName().equals("研究")) {
+                holder.positionTv.setTextColor(Color.parseColor("#db6d2f"));
+            }
+
 
         }
         return convertView;

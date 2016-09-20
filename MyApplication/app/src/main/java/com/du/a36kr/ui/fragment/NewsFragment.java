@@ -1,35 +1,43 @@
 package com.du.a36kr.ui.fragment;
 
-import android.util.Log;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.du.a36kr.R;
-import com.du.a36kr.model.bean.NewsBean;
-import com.du.a36kr.ui.adapter.NewsAdapter;
-import com.du.a36kr.ui.app.MyApp;
+import com.du.a36kr.ui.activity.ControlActivity;
+import com.du.a36kr.ui.fragment.child_fragment.NewsChildFragment;
 import com.du.a36kr.utils.NetUtils;
-import com.google.gson.Gson;
 
 import java.util.List;
 
 /**
  * Created by dllo on 16/9/8.
  */
-public class NewsFragment extends AbsBaseFragment {
+public class NewsFragment extends AbsBaseFragment implements View.OnClickListener {
     private ImageView titleMenuImg;
-    private NewsAdapter adapter;
-    private List<NewsBean.DataBean.DatasBean> data;
-    private ListView listview;
-    //定义请求队列
-    private RequestQueue queue;
+    private ControlActivity controlActivity;
+    private TextView titleTv;
 
+    private List<Fragment> data;
+
+    public static NewsFragment newInstance() {
+        
+        Bundle args = new Bundle();
+        
+        NewsFragment fragment = new NewsFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        controlActivity = (ControlActivity) context;
+    }
 
     @Override
     protected int setLayout() {
@@ -39,46 +47,36 @@ public class NewsFragment extends AbsBaseFragment {
     @Override
     protected void initViews() {
         titleMenuImg = byView(R.id.title_menu_img);
-        listview = byView(R.id.news_list_view);
+        titleTv = byView(R.id.title_tv);
+
 
     }
 
     @Override
     protected void initData() {
-        adapter = new NewsAdapter(MyApp.getContext());
-        //初始化请求队列
-        queue = Volley.newRequestQueue(MyApp.getContext());
-        //请求数据
-        StringRequest request = new StringRequest(NetUtils.NEWS_ALL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d("NewsFragment", response);
-                Gson gson = new Gson();
-                NewsBean bean = gson.fromJson(response,NewsBean.class);
-                data =  bean.getData().getData();
-                adapter.setData(data);
+        titleMenuImg.setOnClickListener(this);
+        //默认显示的界面
+        getChildFragmentManager().beginTransaction().add(R.id.news_frame, NewsChildFragment.newInstance(NetUtils.NEWS_ALL)).commit();
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+    }
+    /**
+     * 对外提供替换站位布局的方法
+     */
+    public void changeFragment(Fragment fragment){
+        getChildFragmentManager().beginTransaction().replace(R.id.news_frame,fragment).commit();
+    }
 
-            }
-        });
-        queue.add(request);
+    /**
+     * 对外提供一个替换TextView的方法
+     */
+    public void changeTextView(String text){
+        titleTv.setText(text);
+    }
 
 
 
-        listview.setAdapter(adapter);
-
-
-        titleMenuImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-
+    @Override
+    public void onClick(View v) {
+        controlActivity.onToControlActivity(1);
     }
 }
