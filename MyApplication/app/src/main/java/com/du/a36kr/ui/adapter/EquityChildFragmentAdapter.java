@@ -1,6 +1,7 @@
 package com.du.a36kr.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ import java.util.List;
 public class EquityChildFragmentAdapter extends BaseAdapter {
     private List<EquityChildFragmentBean.DataBean.DatasBean> datasBeen;
     private Context context;
+
     //context的构造方法
     public EquityChildFragmentAdapter(Context context) {
         this.context = context;
@@ -55,12 +57,11 @@ public class EquityChildFragmentAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_equity, parent, false);
             //屏幕适配(获取屏幕的高度)
-            int height = ScreenSizeUtils.getScreenSize(context, ScreenSizeUtils.ScreenState.HEIGHT);
-            //通过布局设置宽高
-            ViewGroup.LayoutParams params = convertView.getLayoutParams();
-            //重新设置高度
-            params.height = height  ;
-
+//            int height = ScreenSizeUtils.getScreenSize(context, ScreenSizeUtils.ScreenState.HEIGHT);
+//            //通过布局设置宽高
+//            ViewGroup.LayoutParams params = convertView.getLayoutParams();
+//            //重新设置高度
+//            params.height = height * 2  ;
 
 
             //初始化缓存类
@@ -80,23 +81,35 @@ public class EquityChildFragmentAdapter extends BaseAdapter {
             holder.nextTitleTv.setText(bean.getCf_advantage().get(0).getAdcontent());
             holder.nextContentTv.setText(bean.getCf_advantage().get(1).getAdcontent());
             holder.companyTv.setText(bean.getLead_name());
-            int num = (int) (bean.getRate()* 100);
-            holder.fundraisingTv.setText(num + "%");
-
             holder.statusTv.setText(bean.getFundStatus().getDesc());
-            Picasso.with(context).load(bean.getFile_list_img()).into(holder.bigIv);
-            Picasso.with(context).load(bean.getCompany_logo()).into(holder.smallIv);
+            int num = (int) (bean.getRate() * 100);//把长整形变为整形
+            holder.fundraisingTv.setText(num + "%");
+            holder.seekbar.setProgress(num);//设置seekbar进度条的位置
+            Log.d("EquityChildFragmentAdap", bean.getFundStatus().getDesc());
+            //毕加索图片解析
+            Picasso.with(context).load(bean.getFile_list_img()).resize(ScreenSizeUtils.getScreenSize(context, ScreenSizeUtils.ScreenState.WIDTH), ScreenSizeUtils.getScreenSize(context, ScreenSizeUtils.ScreenState.HEIGHT) / 4).into(holder.bigIv);
+            Picasso.with(context).load(bean.getCompany_logo()).resize(ScreenSizeUtils.getScreenSize(context, ScreenSizeUtils.ScreenState.WIDTH) / 7, ScreenSizeUtils.getScreenSize(context, ScreenSizeUtils.ScreenState.HEIGHT) / 7).into(holder.smallIv);
+            //判断替换
+            /*************************************///还没解决遗留问题
+            String str = bean.getFundStatus().getDesc();
+            if (str.equals("募资中")){
+                    holder.purchaseTv.setText("认购");
+                    holder.purchaseTv.setBackgroundColor(Color.parseColor("#f96c30"));
+
+            }
 
         }
 
         return convertView;
     }
 
-    class EquityChildViewHolder {
+    class EquityChildViewHolder implements View.OnClickListener {
         private ImageView smallIv, bigIv;
         //leadTv领投方 founderTv创始人 dataTv孵化器 companyTv公司, StatusTv状态  fundraisingTv已募资的多少
         private TextView titleTv, contentTv, leadTv, founderTv, dataTv, companyTv, statusTv, fundraisingTv;
         private TextView nextTitleTv, nextContentTv;
+        private TextView concernTv;//关注
+        private TextView purchaseTv;//去看看认购
         private SeekBar seekbar;
 
         public EquityChildViewHolder(View view) {
@@ -116,7 +129,35 @@ public class EquityChildFragmentAdapter extends BaseAdapter {
             nextContentTv = (TextView) view.findViewById(R.id.equity_item_next_content);
 
             seekbar = (SeekBar) view.findViewById(R.id.equity_item_seekbar);
+            concernTv = (TextView) view.findViewById(R.id.equity_item_concern_tv);
+            purchaseTv = (TextView) view.findViewById(R.id.equity_item_purchase_Tv);
+            /**
+             * 点击事件
+             */
+            concernTv.setOnClickListener(this);
+            purchaseTv.setOnClickListener(this);
 
+
+        }
+
+        private boolean is = true;
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.equity_item_concern_tv:
+                    if (is == true) {
+                        concernTv.setText("已关注");
+                        is = false;
+                    } else if (is == false) {
+
+                        concernTv.setText("关注");
+                        is = true;
+                    }
+                    break;
+                case R.id.equity_item_purchase_Tv:
+                    break;
+            }
         }
     }
 }

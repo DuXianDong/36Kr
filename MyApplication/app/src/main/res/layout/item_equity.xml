@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -11,8 +13,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/equity_item_small_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:src="@mipmap/ic_launcher" />
 
@@ -37,27 +39,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/ten"
                 android:layout_marginLeft="@dimen/ten"
+                android:maxEms="12"
                 android:singleLine="true"
                 android:text="手机服务专家"
                 android:textColor="@color/black" />
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/equity_item_concern_btn"
+        <TextView
+            android:id="@+id/equity_item_concern_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@color/white"
-            android:src="@mipmap/equity_tips_icon_first" />
+            android:background="@drawable/equity_item_shape"
+            android:text="关注"/>
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/equity_item_big_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
         android:src="@mipmap/ic_launcher" />
 
     <RelativeLayout
@@ -76,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/ten"
-                android:text="领投 方"
+                android:text="领投方"
                 android:textColor="@color/black" />
 
             <TextView
@@ -168,7 +170,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="已募资"
+                    android:layout_marginLeft="10dp"
+                    android:text="数字"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -187,14 +190,15 @@
                 android:thumb="@null" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/equity_item_purchase_btn"
+        <TextView
+            android:id="@+id/equity_item_purchase_Tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:background="@color/orange"
-            android:text="认购"
-            android:textSize="@dimen/twentySp" />
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/equity_item_shape"
+            android:text="去看看" />
     </LinearLayout>
 
 

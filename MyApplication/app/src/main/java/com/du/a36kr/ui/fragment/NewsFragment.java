@@ -12,8 +12,6 @@ import com.du.a36kr.ui.activity.ControlActivity;
 import com.du.a36kr.ui.fragment.child_fragment.NewsChildFragment;
 import com.du.a36kr.utils.NetUtils;
 
-import java.util.List;
-
 /**
  * Created by dllo on 16/9/8.
  */
@@ -22,7 +20,9 @@ public class NewsFragment extends AbsBaseFragment implements View.OnClickListene
     private ControlActivity controlActivity;
     private TextView titleTv;
 
-    private List<Fragment> data;
+
+
+
 
     public static NewsFragment newInstance() {
         
@@ -49,14 +49,16 @@ public class NewsFragment extends AbsBaseFragment implements View.OnClickListene
         titleMenuImg = byView(R.id.title_menu_img);
         titleTv = byView(R.id.title_tv);
 
-
     }
 
     @Override
     protected void initData() {
+
         titleMenuImg.setOnClickListener(this);
-        //默认显示的界面
-        getChildFragmentManager().beginTransaction().add(R.id.news_frame, NewsChildFragment.newInstance(NetUtils.NEWS_ALL)).commit();
+        /**
+         * 默认显示的界面
+         */
+        getChildFragmentManager().beginTransaction().replace(R.id.news_frame, NewsChildFragment.newInstance(NetUtils.NEWS_ALL)).commit();
 
     }
     /**

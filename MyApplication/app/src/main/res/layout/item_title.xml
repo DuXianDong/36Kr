@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_centerVertical="true"
         android:src="@mipmap/nav_icon_navigation"/>
     <TextView
         android:id="@+id/title_tv"
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:text="新闻"/>
@@ -23,6 +25,7 @@
         android:id="@+id/title_search_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:src="@mipmap/discovery_icon_search"
         android:layout_margin="10dp"
         android:layout_alignParentRight="true"/>

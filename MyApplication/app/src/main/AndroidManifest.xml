@@ -18,7 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.AccountStateActivity"></activity>
+        <activity android:name=".ui.activity.AccountStateActivity" />
+        <activity android:name=".ui.activity.StartupActivity" />
+        <activity android:name=".ui.activity.AcademyActivity" />
+        <activity android:name=".ui.activity.NeaTermActivity" />
+        <activity android:name=".ui.activity.ProjectActivity" />
+        <activity android:name=".ui.activity.Search_Investors_Activity" />
+        <activity android:name=".ui.activity.MessageActivity"></activity>
     </application>
 
 </manifest>

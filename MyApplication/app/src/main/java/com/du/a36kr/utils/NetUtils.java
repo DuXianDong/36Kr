@@ -13,6 +13,15 @@ public class NetUtils {
      */
     public final static String ROTATE_IMAGE = "https://rong.36kr.com/api/mobi/roundpics/v4";
     /**
+     * 轮播图的每个图片
+     */
+    public final static String ROTATE_IMAGE_FUTURE = "https://krplus-pic.b0.upaiyun.com/201609/13/a029f98f1fa43456cab1f3a0a000fd92.jpg";
+    public final static String ROTATE_IMAGE_ANISEED= "https://krplus-pic.b0.upaiyun.com/201609/17/336f8144c30d41ef812e2beced792af5.jpg";
+    public final static String ROTATE_IMAGE_FUSION= "https://krplus-pic.b0.upaiyun.com/201609/13/d8c6b08c3cdf847cbb59e97dbbbc429f.jpg";
+    public final static String ROTATE_IMAGE_MECHANIC= "https://krplus-pic.b0.upaiyun.com/201608/29/5d84e589843826199c2f9c9863f9de09.jpg";
+
+
+    /**
      * 全部
      */
     public final static String NEWS_ALL = "https://rong.36kr.com/api/mobi/news?pageSize=20&columnId=all&pagingAction=up";

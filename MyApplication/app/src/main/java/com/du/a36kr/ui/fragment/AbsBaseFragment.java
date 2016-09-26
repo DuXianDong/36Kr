@@ -1,12 +1,15 @@
 package com.du.a36kr.ui.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.du.a36kr.ui.activity.AbsBaseActivity;
 
 /**
  * Created by dllo on 16/9/8.
@@ -57,6 +60,13 @@ public abstract class AbsBaseFragment extends Fragment {
      */
     protected <T extends View> T byView (int resId){
         return (T) getView().findViewById(resId);
+    }
+
+    /**
+     * 跳转
+     */
+    protected void goTo(Class<? extends AbsBaseActivity> to){
+        context.startActivity(new Intent(context , to));
     }
 
 }
