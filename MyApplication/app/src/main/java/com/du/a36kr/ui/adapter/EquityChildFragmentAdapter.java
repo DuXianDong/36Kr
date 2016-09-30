@@ -2,6 +2,7 @@ package com.du.a36kr.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,9 @@ import com.du.a36kr.utils.ScreenSizeUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import static com.du.a36kr.R.id;
+import static com.du.a36kr.R.layout;
 
 /**
  * Created by dllo on 16/9/14.
@@ -53,9 +57,10 @@ public class EquityChildFragmentAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         EquityChildViewHolder holder = null;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_equity, parent, false);
+            convertView = LayoutInflater.from(context).inflate(layout.item_equity, parent, false);
             //屏幕适配(获取屏幕的高度)
 //            int height = ScreenSizeUtils.getScreenSize(context, ScreenSizeUtils.ScreenState.HEIGHT);
 //            //通过布局设置宽高
@@ -97,6 +102,15 @@ public class EquityChildFragmentAdapter extends BaseAdapter {
                     holder.purchaseTv.setBackgroundColor(Color.parseColor("#f96c30"));
 
             }
+            if (num > 100){
+                Drawable draw = context.getResources().getDrawable(R.drawable.seekbar_color);
+                draw.setBounds(holder.seekbar.getProgressDrawable().getBounds());
+                holder.seekbar.setProgressDrawable(draw);
+            }else if (num <= 100){
+                Drawable draw = context.getResources().getDrawable(R.drawable.seekbar_define_color_style);
+                draw.setBounds(holder.seekbar.getProgressDrawable().getBounds());
+                holder.seekbar.setProgressDrawable(draw);
+            }
 
         }
 
@@ -113,30 +127,29 @@ public class EquityChildFragmentAdapter extends BaseAdapter {
         private SeekBar seekbar;
 
         public EquityChildViewHolder(View view) {
-            smallIv = (ImageView) view.findViewById(R.id.equity_item_small_img);
-            bigIv = (ImageView) view.findViewById(R.id.equity_item_big_img);
-            titleTv = (TextView) view.findViewById(R.id.equity_item_title_tv);
-            contentTv = (TextView) view.findViewById(R.id.equity_item_content_tv);
-            leadTv = (TextView) view.findViewById(R.id.equity_item_lead_tv);
-            founderTv = (TextView) view.findViewById(R.id.equity_item_founder_tv);
-            dataTv = (TextView) view.findViewById(R.id.equity_item_data_tv);
-            companyTv = (TextView) view.findViewById(R.id.equity_item_company_tv);
-            statusTv = (TextView) view.findViewById(R.id.equity_item_status_tv);
-            fundraisingTv = (TextView) view.findViewById(R.id.equity_item_fundraising_tv);
+            smallIv = (ImageView) view.findViewById(id.equity_item_small_img);
+            bigIv = (ImageView) view.findViewById(id.equity_item_big_img);
+            titleTv = (TextView) view.findViewById(id.equity_item_title_tv);
+            contentTv = (TextView) view.findViewById(id.equity_item_content_tv);
+            leadTv = (TextView) view.findViewById(id.equity_item_lead_tv);
+            founderTv = (TextView) view.findViewById(id.equity_item_founder_tv);
+            dataTv = (TextView) view.findViewById(id.equity_item_data_tv);
+            companyTv = (TextView) view.findViewById(id.equity_item_company_tv);
+            statusTv = (TextView) view.findViewById(id.equity_item_status_tv);
+            fundraisingTv = (TextView) view.findViewById(id.equity_item_fundraising_tv);
             //adContent
-            nextTitleTv = (TextView) view.findViewById(R.id.equity_item_next_title_tv);
+            nextTitleTv = (TextView) view.findViewById(id.equity_item_next_title_tv);
             //adcontent
-            nextContentTv = (TextView) view.findViewById(R.id.equity_item_next_content);
+            nextContentTv = (TextView) view.findViewById(id.equity_item_next_content);
 
-            seekbar = (SeekBar) view.findViewById(R.id.equity_item_seekbar);
-            concernTv = (TextView) view.findViewById(R.id.equity_item_concern_tv);
-            purchaseTv = (TextView) view.findViewById(R.id.equity_item_purchase_Tv);
+            seekbar = (SeekBar) view.findViewById(id.equity_item_seekbar);
+            concernTv = (TextView) view.findViewById(id.equity_item_concern_tv);
+            purchaseTv = (TextView) view.findViewById(id.equity_item_purchase_Tv);
             /**
              * 点击事件
              */
             concernTv.setOnClickListener(this);
             purchaseTv.setOnClickListener(this);
-
 
         }
 
@@ -145,7 +158,7 @@ public class EquityChildFragmentAdapter extends BaseAdapter {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.equity_item_concern_tv:
+                case id.equity_item_concern_tv:
                     if (is == true) {
                         concernTv.setText("已关注");
                         is = false;
@@ -155,9 +168,10 @@ public class EquityChildFragmentAdapter extends BaseAdapter {
                         is = true;
                     }
                     break;
-                case R.id.equity_item_purchase_Tv:
+                case id.equity_item_purchase_Tv:
                     break;
             }
         }
     }
+
 }

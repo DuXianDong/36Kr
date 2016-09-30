@@ -56,7 +56,7 @@ public class NetUtils {
     /**
      * 详情
      */
-    public final static String NEWS_DETAILS = "https://rong.36kr.com/api/mobi/news/5041796";
+    public final static String NEWS_DETAILS = "https://rong.36kr.com/api/mobi/news/";
     /**
      * 作者
      */

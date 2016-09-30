@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -15,6 +16,7 @@ import com.du.a36kr.model.bean.NewsBean;
 import com.du.a36kr.model.bean.RotateImageBean;
 import com.du.a36kr.model.net.VolleyInstance;
 import com.du.a36kr.model.net.VolleyResult;
+import com.du.a36kr.ui.activity.NewsActivity;
 import com.du.a36kr.ui.adapter.NewsChildAdapter;
 import com.du.a36kr.ui.adapter.RotateImageAdapter;
 import com.du.a36kr.ui.fragment.AbsBaseFragment;
@@ -27,7 +29,7 @@ import java.util.List;
 /**
  * Created by dllo on 16/9/19.
  */
-public class NewsChildFragment extends AbsBaseFragment {
+public class NewsChildFragment extends AbsBaseFragment implements AdapterView.OnItemClickListener {
     private static final int TIME = 3000;//线程时间
     private ViewPager viewPager;//轮播图的ViewPager
     private LinearLayout layout;//小圆点
@@ -74,6 +76,7 @@ public class NewsChildFragment extends AbsBaseFragment {
      */
     @Override
     protected void initData() {
+        listview.setOnItemClickListener(this);
         Bundle bundle = getArguments();//从单利中获取传回来的数据
         String string = bundle.getString("Url");//在bundle中取出数据
 
@@ -124,7 +127,7 @@ public class NewsChildFragment extends AbsBaseFragment {
         /**
          * 加载Viewpager的行布局
          */
-        View headView = LayoutInflater.from(context).inflate(R.layout.item_viewpager, null);
+        View headView = LayoutInflater.from(context).inflate(R.layout.item_rotate_viewpager, null);
         viewPager = (ViewPager) headView.findViewById(R.id.item_rotate_pager);//初始化ViewPager组件
         layout = (LinearLayout) headView.findViewById(R.id.item_pager_linear);//初始化LinearLayout(小圆点的位置)
 
@@ -244,5 +247,12 @@ public class NewsChildFragment extends AbsBaseFragment {
         rotateBean.add(new RotateImageBean(NetUtils.ROTATE_IMAGE_MECHANIC));
 
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Bundle bundle = new Bundle();
+        bundle.putString("url",NetUtils.NEWS_DETAILS + data.get(position - 1).getFeedId());
+        goTo(context , NewsActivity.class, bundle);
     }
 }

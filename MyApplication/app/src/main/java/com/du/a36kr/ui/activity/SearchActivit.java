@@ -3,15 +3,14 @@ package com.du.a36kr.ui.activity;
 import com.du.a36kr.R;
 
 /**
- * 消息登录后的状态界面
+ * 搜索界面
  */
 
-public class MessageActivity extends AbsBaseActivity {
-
+public class SearchActivit extends AbsBaseActivity {
 
     @Override
     protected int setLayout() {
-        return R.layout.activity_message;
+        return R.layout.activity_search;
     }
 
     @Override

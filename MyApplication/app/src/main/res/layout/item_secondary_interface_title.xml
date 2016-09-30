@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/item_mine_title_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/ten"
+        android:layout_gravity="center"
+        android:src="@mipmap/news_toolbar_icon_back"/>
+    <TextView
+        android:id="@+id/item_mine_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fifteenSp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/ten"
+        android:gravity="center_horizontal"
+        android:text="我的订单"/>
+
+</LinearLayout>

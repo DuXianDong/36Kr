@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.du.a36kr.R;
 import com.du.a36kr.ui.activity.ControlActivity;
+import com.du.a36kr.ui.activity.SearchActivit;
 import com.du.a36kr.ui.fragment.child_fragment.NewsChildFragment;
 import com.du.a36kr.utils.NetUtils;
 
@@ -19,6 +20,7 @@ public class NewsFragment extends AbsBaseFragment implements View.OnClickListene
     private ImageView titleMenuImg;
     private ControlActivity controlActivity;
     private TextView titleTv;
+    private ImageView titleSearchImg;//搜索
 
 
 
@@ -48,6 +50,8 @@ public class NewsFragment extends AbsBaseFragment implements View.OnClickListene
     protected void initViews() {
         titleMenuImg = byView(R.id.title_menu_img);
         titleTv = byView(R.id.title_tv);
+        titleSearchImg = byView(R.id.title_search_img);
+
 
     }
 
@@ -55,6 +59,7 @@ public class NewsFragment extends AbsBaseFragment implements View.OnClickListene
     protected void initData() {
 
         titleMenuImg.setOnClickListener(this);
+        titleSearchImg.setOnClickListener(this);
         /**
          * 默认显示的界面
          */
@@ -79,6 +84,13 @@ public class NewsFragment extends AbsBaseFragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.title_menu_img:
         controlActivity.onToControlActivity(1);
+                break;
+            case R.id.title_search_img:
+                goTo(SearchActivit.class);
+                break;
+        }
     }
 }

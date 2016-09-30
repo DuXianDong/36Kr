@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include layout="@layout/item_equity_title"/>
     <android.support.design.widget.TabLayout
         android:id="@+id/equity_tab"
         android:layout_width="match_parent"

@@ -19,7 +19,7 @@ import java.util.List;
  * Created by dllo on 16/9/9.
  * EquityFragment 的子Fragment
  */
-public class EquityChildFragment extends AbsBaseFragment {
+public class EquityChildFragment extends AbsBaseFragment  {
     private ListView listview;
     private List<EquityChildFragmentBean.DataBean.DatasBean> datasBeen;
     private EquityChildFragmentAdapter adapter;
@@ -76,6 +76,7 @@ public class EquityChildFragment extends AbsBaseFragment {
 
 
     }
+
 
 
 }

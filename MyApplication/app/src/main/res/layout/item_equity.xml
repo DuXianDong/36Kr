@@ -156,6 +156,8 @@
             <RelativeLayout
                 android:id="@+id/equity_item_Rvlayout"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -187,6 +189,8 @@
                 android:id="@+id/equity_item_seekbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxHeight="10px"
+                android:minHeight="10px"
                 android:thumb="@null" />
         </LinearLayout>
 
@@ -196,8 +200,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
             android:background="@drawable/equity_item_shape"
+            android:paddingRight="10dp"
             android:text="去看看" />
     </LinearLayout>
 

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#afaeae"
+    android:background="@color/white"
     android:orientation="horizontal">
     <ImageView
         android:id="@+id/title_menu_img"

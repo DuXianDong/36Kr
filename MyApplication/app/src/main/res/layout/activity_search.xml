@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/twenty"
+        android:src="@mipmap/seaarch_nav_icon_search"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twenty"
+        android:textSize="@dimen/twentySp"
+        android:singleLine="true"
+        android:hint="搜索新闻/用户/公司"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:layout_margin="@dimen/twenty"
+        android:textSize="@dimen/fifteenSp"
+        android:text="取消"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/thirty"
+        android:src="@mipmap/search_ph_search"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="无搜索记录"/>
+
+</LinearLayout>
